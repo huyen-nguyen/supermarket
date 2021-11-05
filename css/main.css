@@ -1,0 +1,12 @@
+.object{
+    font-family: "Courier New", serif;
+}
+
+.description{
+    font-family: Arial, sans-serif;
+}
+
+.seqNumber {
+    font-family: Palatino, serif;
+    font-weight: bold;
+}

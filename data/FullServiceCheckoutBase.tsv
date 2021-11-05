@@ -1,0 +1,49 @@
+From	To	Content
+Customer Order Receipt Printer Interface	Customer Order Receipt Printer	F1.6b.1: Item description and price, B1.16b.1: Item description, weight, and price F2.8b.1: Total price and tax amount (total price, tax amount), P2.5 [accepted]: Card number and authorization code F4.6b.1: Change amount and feed out receipt
+Full-Service Touch Screen Interface	Full-Service Touch Screen	F1.4A.5 [bulk item]: Prompt to weigh bulk item F1.6a.1: Item description and price, B1.16a.1: Item description, weight, and price F2.8a.1: Total price, F2.15: Prompt for payment amount and payment type, P2A.6a.1 [rejected]: Order cancelled, F4.6a.1: Change amount
+Full-Service Touch Screen	Full-Service Touch Screen	F1*A [id number entered manually]: Item identification number, B1: SCALE function key, F2: TOTAL function key, F3: Payment amount, payment type F4: CHANGE function key
+Bar-Code Scanner	Bar-Code Scanner Interface	F1*: Item identification number
+Customer Display Interface	Customer Display	F1.7: Item description and price, B1.17: Item description, weight, and price F2.9: Total price, F3.5: Insert card prompt, P2A.7 [rejected]: Order cancelled, F4.7: Change amount
+Credit/Debit Card Reader	Credit/Debit Card Reader Interface	P1: Credit card input, P1A: Debit card input, cardholder PIN
+Full-Service Checkout Control	Customer Order Receipt Printer Interface	F1.6b: Print item description and price (item description, price), B1.16b: Print item description, weight and price (item description, weight, price) F2.8b: Print total price and tax amount (total price, tax amount), P2.4 [accepted]: Print card number and authorization code F4.6b: Print change amount and feed out receipt
+Full-Service Touch Screen Interface	Full-Service Checkout Control	F1A.1 [id number entered manually]: Item identification number B1.1: SCALE function key, F2.1: TOTAL function key, F3.1: Payment amount, payment type, F4.1: CHANGE function key
+Full-Service Checkout Control	Full-Service Touch Screen Interface	F1.4A.4 [bulk item]: Prompt to weigh bulk item F1.6a: Display item description and price (item description, price) B1.16a: Display item description, weight and price (item description, weight, price) F2.8a: Display total price (total price), F2.14: Prompt for payment amount and payment type, P2A.6a [rejected]: Display order cancelled, F4.6a: Display change amount (change amount)
+Bar-Code Scanner Interface	Full-Service Checkout Control	F1.1: Item identification number
+Full-Service Checkout Control	Customer Display Interface	F1.6: Display item description and price (item description, price), B1.16: Display item description, weight and price (item description, weight, price) F2.8: Display total price (total price),  F3.4: Display insert card prompt, P2A.6 [rejected]: Display order cancelled, F4.6: Display change amount (change amount)
+Credit/Debit Card Reader Interface	Full-Service Checkout Control	P1.1: Credit card input, P1A.1: Debit card input, cardholder PIN
+Full-Service Checkout Control	<<algorithm>> Compute Change	F4.2: Compute change amount
+<<algorithm>> Compute Change	Full-Service Checkout Control	F4.5: Change amount
+<<algorithm>> Compute Change	Order Details	F4.3: Retrieve payment amount and order total cost
+Order Details	<<algorithm>> Compute Change	F4.4: Payment amount and order total cost
+Full-Service Checkout Control	English Display Prompts	F1.4A.2 [bulk item]: Retrieve display prompt F2.12: Retrieve display prompt F3.2: Retrieve display prompt P2A.4 [rejected]: Retrieve display prompt
+English Display Prompts	Full-Service Checkout Control	F1.4A.3 [bulk item]: Display prompt F2.13: Display prompt F3.3: Display prompt P2A.5 [rejected]: Display prompt
+Full-Service Checkout Control	Order Details	F1.4: Update order (product information), B1.14: Update order (product information, item weight, item price), P2.2 [accepted]: Order paid for (payment amount) P2A.2 [rejected]: Cancel order
+Order Details	Full-Service Checkout Control	F1.5: Order Updated, B1.15: Order Updated, P2.3 [accepted]: Order Updated, P2A.3 [rejected]: Order cancelled
+Order Details	<<algorithm>> Compute Total Cost	F2.4: Order details
+<<algorithm>> Compute Total Cost	Order Details	F2.3: Retrieve order details F2.7a: Update order (total price, tax amount)
+<<algorithm>> Compute Total Cost	Tax Details	F2.5: Retrieve current tax rate
+Tax Details	<<algorithm>> Compute Total Cost	F2.6: Tax rate
+<<algorithm>> Compute Total Cost	Full-Service Checkout Control	F2.7: Total price (total price, tax amount)
+Full-Service Checkout Control	<<algorithm>> Compute Total Cost	F2.2: Compute total price
+Full-Service Checkout Control	Product Inventory	F1.2: Retrieve product information (item identification number)
+Product Inventory	Full-Service Checkout Control	F1.3: Product information
+Credit/Debit Card Authorization Center Proxy	Full-Service Checkout Control	P2.1 [accepted]: Authorization Code P2A.1 [rejected]: Rejection Message
+Full-Service Checkout Control	Credit/Debit Card Authorization Center Proxy	P1.2: Request credit card authorization (credit card input), P1.2A: Request debit card authorization (debit card input and PIN)
+Full-Service Checkout Control	Till Interface	F2.10: Open till
+Scale Interface	Full-Service Checkout Control	B1.5: Item weight
+Full-Service Checkout Control	Scale Interface	B1.2: Calculate item weight
+Full-Service Checkout Control	Bulk Item Weight	B1.6: Store item weight
+Bulk Item Weight	Full-Service Checkout Control	B1.7: Item weight stored
+Bulk Item Product Information	Full-Service Checkout Control	F1.4A.1 [bulk item]: Product information stored
+Full-Service Checkout Control	Bulk Item Product Information	F1.4A [bulk item]: Store product information
+Credit/Debit Card Authorization Center Proxy	Credit/Debit Card Authorization Center	P1.3: Request credit card authorization (credit card input), P1.2A.1: Request debit card authorization (debit card input and PIN)
+Credit/Debit Card Authorization Center	Credit/Debit Card Authorization Center Proxy	P2 [accepted]: Authorization Code P2A [rejected]: Rejection Message
+Till Interface	Till	F2.11: Open till
+Scale Interface	Scale	B1.3: Calculate item weight
+Scale	Scale Interface	B1.4: Item weight
+<<algorithm>> Compute Bulk Item Price	Full-Service Checkout Control	B1.13: Bulk item info (product information, weight, price)
+Full-Service Checkout Control	<<algorithm>> Compute Bulk Item Price	B1.8: Compute bulk item price
+<<algorithm>> Compute Bulk Item Price	Bulk Item Weight	B1.11: Retrieve bulk item weight
+Bulk Item Weight	<<algorithm>> Compute Bulk Item Price	B1.12: Bulk item weight
+<<algorithm>> Compute Bulk Item Price	Bulk Item Product Information	B1.9: Retrieve product information
+Bulk Item Product Information	<<algorithm>> Compute Bulk Item Price	B1.10: Product information
