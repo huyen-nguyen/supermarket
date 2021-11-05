@@ -1,15 +1,33 @@
-let fileName = "FullServiceCheckoutBase.tsv";
+let fileNameArray = ["FullServiceCheckoutBase.tsv", "SelfServiceCheckoutBase.tsv"];
 
-loadData(fileName);
+loadData(fileNameArray[0]);
 
 function loadData(fileName){
     d3.tsv("data/" + fileName, function (err, data){
         if (err) throw err;
         else {
-			d3.select("body").append("h2")
-				.attr("id", "header")
-            d3.select("body").append("div")
-                .attr("id", "main" );
+        	// set up dropdown
+			let dropdown = d3.select("body").append("div")
+				.attr("class", "dropdown").style("float", "right");
+			dropdown.append("button").attr("class", "dropbtn").html("Select Communication Diagram")
+			dropdown.append("div").attr("class", "dropdown-content").attr("id", "menu")
+
+			d3.select("#menu")
+				.selectAll("span")
+				.data(fileNameArray)
+				.enter()
+				.append("span")
+				.text(d => formatted(d))
+				.on("click", d => {
+					d3.tsv("data/" + d, function (nerr, newdata){
+						if (nerr) throw nerr
+						print(d, newdata)
+					})
+				})
+
+			// set up header and main
+			d3.select("body").append("h2").attr("id", "header")
+            d3.select("body").append("div").attr("id", "main" );
 
             print(fileName, data)
         }
@@ -72,11 +90,13 @@ function print(fileName, data){
             '<br><br>';
     })
 
-	let s = "FullServiceCheckoutBase.tsv"
-	d3.select("#header").html(fileName.split(".")[0].replace(/[A-Z]/g, m => " " + m) + " Message Sequence Description");
+	d3.select("#header").html(formatted(fileName) + " Message Sequence Description");
     d3.select("#main").html(bigString)
 }
 
+function formatted(fileName){
+	return fileName.split(".")[0].replace(/[A-Z]/g, m => " " + m)
+}
 function processAlg(string){
     if (string.includes("algorithm")){
         return string.split(">>")[1] + " Algorithm";
@@ -97,6 +117,7 @@ function desc(content){
         }
     }
 
+    // if action is required from source
     let pVerb = primaryVerb.find(d => c.includes(d))
     if (pVerb){
     	let main = pVerb.split(" ")[0];
@@ -106,6 +127,7 @@ function desc(content){
 		}
 	}
 
+    // otherwise
     return {
         verb: "sends to ",
         content: c
