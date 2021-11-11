@@ -52,54 +52,47 @@ function combine(data){
                 condition = " (if " + msg.split(":")[0].split("[")[1].split("]")[0] + ") ";
             }
 
+            let order2 = order.trim().replace("F", "L");
+
             array.push({	// array of all individual messages
-                order: order.trim().replace("F", "L"),
+                order: order2,
                 condition: condition.trim(),
                 content: content.trim(),
                 From: d.From,
                 To: d.To,
-                orderSort: orderToSort(order.trim().replace("F", "L")).trim()
+				head: order2.includes(".") ? order2.substr(0, order2.indexOf(".")) : order2,
+				int: parseInt(order.includes(".") ? order.split(".")[1] : "0")
             })
         })
     })
 
-    // nested
-    let grouped = d3.nest()
-        .key(function (d) { return d.order[0]; })
-        .entries(array)
+	// sort by sequence order number
+	array.sort((a, b) => {
+		if (a.order > b.order) {
+			if ((a.int < b.int) && (a.head === b.head)){	// if nothing strange, go with usual string comparison
+				return -1;									// but flip if order of int conflicts
+			}
+			return 1;			// default
+		}
+		if (a.order < b.order) {
+			if ((a.int > b.int) && (a.head === b.head)){	// only flip if conflicts
+				return 1;
+			}
+			return -1; 			// default
+		}
+		return 0;				// default
+	})
 
-    grouped.forEach(d => {
-        d.values.sort((a, b) => {
-            if (parseInt(a.order.replace(/[\D]/g,"")) > parseInt(b.order.replace(/[\D]/g,""))) {
-                return 1;
-            }
-            if (parseInt(a.order.replace(/[\D]/g,"")) < parseInt(b.order.replace(/[\D]/g,""))) {
-                return -1;
-            }
-            return 0;
-        })
-    })
+	return array;
+}
 
-    grouped.sort(function(a, b) {
-        var nameA = a.key; // ignore upper and lowercase
-        var nameB = b.key; // ignore upper and lowercase
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-// names must be equal
-        return 0;
-    });
+function addDot(str){
+	let countDot = (str.match(/\./g) || []).length;
 
-    let arr = [];
-
-    grouped.forEach(d => {arr = arr.concat(d.values)})
-
-    debugger
-
-	return arr;
+	if (countDot < 2){
+		str = countDot ? str + "." : str + "..";
+	}
+	return str
 }
 
 function orderToSort(str){
