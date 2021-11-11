@@ -57,22 +57,59 @@ function combine(data){
                 condition: condition.trim(),
                 content: content.trim(),
                 From: d.From,
-                To: d.To
+                To: d.To,
+                orderSort: orderToSort(order.trim().replace("F", "L")).trim()
             })
         })
     })
 
-	// sort by sequence order number
-	array.sort((a, b) => {
-		if (a.order > b.order) {
-			return 1;
-		}
-		if (a.order < b.order) {
-			return -1;
-		}
-		return 0;
-	})
-	return array;
+    // nested
+    let grouped = d3.nest()
+        .key(function (d) { return d.order[0]; })
+        .entries(array)
+
+    grouped.forEach(d => {
+        d.values.sort((a, b) => {
+            if (parseInt(a.order.replace(/[\D]/g,"")) > parseInt(b.order.replace(/[\D]/g,""))) {
+                return 1;
+            }
+            if (parseInt(a.order.replace(/[\D]/g,"")) < parseInt(b.order.replace(/[\D]/g,""))) {
+                return -1;
+            }
+            return 0;
+        })
+    })
+
+    grouped.sort(function(a, b) {
+        var nameA = a.key; // ignore upper and lowercase
+        var nameB = b.key; // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+// names must be equal
+        return 0;
+    });
+
+    let arr = [];
+
+    grouped.forEach(d => {arr = arr.concat(d.values)})
+
+    debugger
+
+	return arr;
+}
+
+function orderToSort(str){
+    if (!str.includes(".")) return str;
+
+    let arr = str.split(".")
+    if (parseInt(arr[1]) > 9) return str
+
+    arr[1] = arr[1].replace(/[\d][^\d]/g, m => "0" + m);   // add 0 before number
+    return arr.join(".")
 }
 
 function print(fileName, data){
