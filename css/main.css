@@ -10,6 +10,10 @@ body {
     font-weight: bold;
 }
 
+.description{
+	font-family: Palatino, serif; !important;
+}
+
 /* ------ end of general: font face ------ */
 /* ------ drop down menu ------ */
 

@@ -49,7 +49,7 @@ function combine(data){
 
             if (order.includes("[")){		// contain condition
                 order = order.split("[")[0];
-                condition = " (if " + msg.split(":")[0].split("[")[1].split("]")[0] + ") ";
+                condition = "[" + msg.split(":")[0].split("[")[1].split("]")[0] + "]";
             }
 
             let order2 = order.trim().replace("F", "L");
@@ -116,8 +116,8 @@ function print(fileName, data){
 
     array.forEach(msg => {
     	let c = desc(msg.content);
-        bigString += '<span class="seqNumber">' + msg.order + ': </span>' +
-            '<span class="description">' + msg.condition +' </span>' +
+        bigString += '<span class="seqNumber">' + msg.order + '</span>' +
+            '<span class="seqNumber">' + msg.condition +': </span>' +
             '<span class="object">' + processAlg(msg.From) +'</span>' +
             '<span class="description"> ' + c.verb + ' </span>' +
             '<span class="object">' + processAlg(msg.To) +'</span>' +
@@ -130,11 +130,11 @@ function print(fileName, data){
 }
 
 function formatted(fileName){
-	return fileName.split(".")[0].replace(/[A-Z]/g, m => " " + m)
+	return fileName.split(".")[0].replace(/[A-Z]/g, m => " " + m).replace("V P", "VP")
 }
 function processAlg(string){
     if (string.includes("algorithm")){
-        return string.split(">>")[1] + " Algorithm";
+        return string.split(">>")[1] + "<span class='description'> algorithm</span>";
     }
     return string
 }
