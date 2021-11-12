@@ -1,0 +1,13 @@
+From	To	Content
+Inventory Orders Coordinator	<<algorithm>> Create Inventory Orders	I2.1: Create inventory orders
+<<algorithm>> Create Inventory Orders	Inventory Orders Coordinator	I3.5: Inventory Orders Created
+<<algorithm>> Create Inventory Orders	Inventory Orders	I3.3: Store Inventory Orders (inventory orders)
+Inventory Orders	<<algorithm>> Create Inventory Orders	I3.4: Inventory Orders Stored
+<<algorithm>> Create Inventory Orders	<<algorithm>> Inventory Prediction	I2.4: Compute quantities of products to be ordered
+<<algorithm>> Inventory Prediction	<<algorithm>> Create Inventory Orders	I3.2: Quantities of products to be ordered
+<<algorithm>> Create Inventory Orders	Inventory Message	I2.2: Retrieve inventory messages
+Inventory Message	<<algorithm>> Create Inventory Orders	I2.3: Inventory messages
+<<algorithm>> Inventory Prediction	Manager Interface	I2.5: Display prompt manager input
+Manager Interface	<<algorithm>> Inventory Prediction	I3.1: Manager input
+Manager User Interface	Manager Interface	I3: Manager input
+Manager Interface	Manager User Interface	I2.6: Prompt manager input

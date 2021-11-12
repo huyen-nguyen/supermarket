@@ -1,4 +1,4 @@
-let fileNameArray = ["FullServiceCheckoutBase.tsv", "SelfServiceCheckoutBase.tsv"];
+let fileNameArray = ["FullServiceCheckoutBase.tsv", "SendInventory.tsv", "InventoryPredictionVP.tsv"];
 
 loadData(fileNameArray[0]);
 
@@ -86,6 +86,11 @@ function combine(data){
 	return array;
 }
 
+function comma(str){
+    if (str[str.length-1] === ",") return str.substring(0, str.length - 1);
+    return str
+}
+
 function addDot(str){
 	let countDot = (str.match(/\./g) || []).length;
 
@@ -116,7 +121,7 @@ function print(fileName, data){
             '<span class="object">' + processAlg(msg.From) +'</span>' +
             '<span class="description"> ' + c.verb + ' </span>' +
             '<span class="object">' + processAlg(msg.To) +'</span>' +
-            '<span class="description"> ' + c.content +  '</span>' +
+            '<span class="description"> ' + comma(c.content) +  '.</span>' +
             '<br><br>';
     })
 
@@ -137,7 +142,7 @@ function processAlg(string){
 function desc(content){
 	let c = content.toLowerCase();
 	let primaryVerb = ["prompt to", "prompt for"]
-    let secondaryVerb = ["retrieve ", "open ", "print ", "display ", "compute ", "update ", "request ", "insert ", "calculate ", "scale ", "store "]
+    let secondaryVerb = ["retrieve ", "open ", "print ", "display ", "compute ", "update ", "request ", "insert ", "calculate ", "scale ", "store ", "create "]
 
     // if there exists a verb above
     if (secondaryVerb.some(d => c.includes(d))) {

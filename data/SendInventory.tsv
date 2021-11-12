@@ -1,0 +1,19 @@
+From	To	Content
+Supplier Interface	Supplier System	I2.12: Inventory orders
+Inventory Orders Coordinator	Supplier Interface	I2.11: Send inventory orders (inventory orders)
+Timer	Inventory Orders Coordinator	I2: Signal to send orders
+Inventory Orders	Inventory Orders Coordinator	I2.10: Inventory orders
+Inventory Orders Coordinator	Inventory Orders	I2.9: Retrieve inventory orders
+Inventory Orders	<<algorithm>> Create Inventory Orders	I2.7: Inventory Orders Stored
+<<algorithm>> Create Inventory Orders	Inventory Orders	I2.6: Store Inventory Orders (inventory orders)
+Inventory Orders Coordinator	<<algorithm>> Create Inventory Orders	I2.1: Create inventory orders
+<<algorithm>> Create Inventory Orders	Inventory Orders Coordinator	I2.8: Inventory Orders Created
+<<algorithm>> Create Inventory Orders	Inventory Predefined Quantities	I2.4: Retrieve  predefined quantities
+Inventory Predefined Quantities	<<algorithm>> Create Inventory Orders	I2.5: Predefined quantities information
+<<algorithm>> Create Inventory Orders	Inventory Message	I2.2: Retrieve inventory messages
+Inventory Message	<<algorithm>> Create Inventory Orders	I2.3: Inventory messages
+<<algorithm>> Create Inventory Message	Inventory Message	I1.3: Store Inventory Message (inventory message)
+Inventory Message	<<algorithm>> Create Inventory Message	I1.4: Inventory Message Stored
+Inventory Orders Coordinator	<<algorithm>> Create Inventory Message	I1.2: Create Inventory Message (item information)
+Inventory System Interface	Inventory Orders Coordinator	I1.1: Item inventory below threshold (item information)
+Inventory System	Inventory System Interface	I1: Item inventory below threshold (item information)
