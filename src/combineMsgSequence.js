@@ -1,6 +1,8 @@
-let fileNameArray = ["LoyalCustomer.tsv","ApplyCouponsDisplayLanguageVP.tsv","FullServiceCheckoutBase.tsv", "SendInventory.tsv", "InventoryPredictionVP.tsv"];
+let fileNameArray = ["Self-ServiceLoyalCustomer.tsv", "TriggerAlarm.tsv", "Self-ServicePayWithCREDIT-DEBIT.tsv","Self-ServicePayWithCashVP.tsv","Self-ServiceExtraDiscount.tsv","Self-ServiceDisplayLanguageVP.tsv","Self-ServiceApplyCouponsVP.tsv", "RecordCustomer.tsv", "LoyalCustomer.tsv","ApplyCouponsDisplayLanguageVP.tsv","FullServiceCheckoutBase.tsv", "SendInventory.tsv", "InventoryPredictionVP.tsv"];
 
-loadData(fileNameArray[0]);
+fileNameArray.sort();
+
+loadData(fileNameArray[2]);
 
 function loadData(fileName){
     d3.tsv("data/" + fileName, function (err, data){
@@ -17,7 +19,7 @@ function loadData(fileName){
 				.data(fileNameArray)
 				.enter()
 				.append("span")
-				.text(d => formatted(d))
+				.text(d => formatTitle(d))
 				.on("click", d => {
 					d3.tsv("data/" + d, function (nerr, newdata){
 						if (nerr) throw nerr
@@ -43,6 +45,7 @@ function combine(data){
 
         // if content has multiple messages separated by |
         d.Content.split("|").filter(m => m.length > 0).forEach(msg => {
+            // console.log(msg)
         	let order = msg.split(":")[0];
             let content = msg.split(":")[1];
             let condition = "";
@@ -125,12 +128,13 @@ function print(fileName, data){
             '<br><br>';
     })
 
-	d3.select("#header").html(formatted(fileName) + " Message Sequence Description");
+	d3.select("#header").html(formatTitle(fileName) + " Message Sequence Description");
     d3.select("#main").html(bigString)
 }
 
-function formatted(fileName){
-	return fileName.split(".")[0].replace(/[A-Z]/g, m => " " + m).replace("V P", "VP")
+function formatTitle(fileName){
+	return fileName.split(".")[0].replace(/[A-Z]+/g, m => " " + m)
+        .replaceAll("- ", "-")
 }
 function processAlg(string){
     if (string.includes("algorithm")){
@@ -141,9 +145,9 @@ function processAlg(string){
 
 function desc(content){
 	let c = content.toLowerCase();
-	let primaryVerb = ["prompt to", "prompt for"]
+	let primaryVerb = ["prompt to", "prompt for", "return to"]
     let secondaryVerb = ["retrieve ", "open ", "print ", "display ", "compute ", "update ", "request ", "insert ", "calculate ", "scale ", "store ", "create ",
-    "query ", "add ", "dismiss "]
+    "query ", "add ", "dismiss ", "record ", "stop ", "activate ", "send ", "get ", ]
 
     // if there exists a verb above
     if (secondaryVerb.some(d => c.includes(d))) {

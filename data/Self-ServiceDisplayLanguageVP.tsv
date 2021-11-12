@@ -1,0 +1,5 @@
+From	Content	To
+Spanish Display Prompts	F1.6A.3 [bulk item]: Display prompt F2.11: Display prompt F3.3: Display prompt P2A.5 [rejected]: Display prompt	Self-Service Checkout Control
+Self-Service Checkout Control	F1.6A.2 [bulk item]: Retrieve display prompt F2.10: Retrieve display prompt F3.2: Retrieve display prompt P2A.4 [rejected]: Retrieve display prompt	Spanish Display Prompts
+Self-Service Checkout Control	F1.6A.4 [bulk item]: Prompt to weigh bulk item, F2.12: Prompt for payment amount and payment type, F3.4: Display insert card prompt, P2A.6 [rejected]: Display order cancelled	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	F1.6A.5 [bulk item]: Prompt to weigh bulk item, F2.13: Prompt for payment amount and payment type F3.5: Insert card prompt, P2A.7 [rejected]: Order cancelled,	Self-Service Touch Screen

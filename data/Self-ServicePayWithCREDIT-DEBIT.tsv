@@ -1,0 +1,11 @@
+From	Content	To
+Credit/Debit Card Reader	X1: Credit Card Input X1A: Debit Card and PIN Input	Credit/Debit Card Interface
+Credit/Debit Card Interface	X1.1: Credit Card Info X1A.1: Debit Card Info	Self-Service Checkout Control
+Self-Service Checkout Control	X1.6: Authorization Code and Card Number	Receipt Printer Interface
+Receipt Printer Interface	X1.7: Print Authorization Code and Card Number on Receipt	Receipt Printer
+Self-Service Checkout Control	X1.6A: That No Payment Offered	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	X1.6A.1: that Order Cancelled	Self-Service Touch Screen
+Self-Service Checkout Control	X1.2: Credit Card Request X1A.2: Debit Card Request	Credit/Debit Card Authorization Center Proxy
+Credit/Debit Card Authorization Center Proxy	X1.5: Authorization Code	Self-Service Checkout Control
+Credit/Debit Card Authorization Center Proxy	X1.3: Debit Card Authorization X1A.3: Credit Card Authorization	Credit/Debit Card Authorization Center
+Credit/Debit Card Authorization Center	X1.4 [Accepted]: Return Authorization Code X1A.4 [Rejected]: that No Payment Offered	Credit/Debit Card Authorization Center Proxy

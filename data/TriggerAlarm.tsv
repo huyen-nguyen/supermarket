@@ -1,0 +1,15 @@
+From	Content	To
+Self-Service Touch Screen	F1.4: that there is No customer response signal F1.4A.6: that there is No customer response signal F1.4A: Payment amount, payment type	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	F1.3: Prompt for payment amount and payment type F1.4A.5: Insert card prompt	Self-Service Touch Screen
+Self-Service Touch Screen Interface	F1.5: that there is No customer response signal F1.4A.7: that there is No customer response signal F1.4A.1: Payment amount, payment type	Self-Service Checkout Control
+Self-Service Checkout Control	F1.2: Prompt for payment amount and payment type F1.4A.4: Display insert card prompt	Self-Service Touch Screen Interface
+Self-Service Checkout Control	F1: Retrieve payment display prompt F1.4A.2: Retrieve payment display prompt	English Display Prompts
+English Display Prompts	F1.1: Display payment prompt F1.4A.3: Display payment prompt	Self-Service Checkout Control
+Manager's Cellphone Interface	T2.1: Alert Manager and Send captured image	Manager's Cellphone
+Self-Service Checkout Control	T2: Alert Manager and Send captured image	Manager's Cellphone Interface
+Camera	T1a.2: captured image (image)	Camera interface
+Camera interface	T1a.1: Activate camera to capture	Camera
+Camera interface	T1a.3: Send customer image (image)	Self-Service Checkout Control
+Self-Service Checkout Control	T1a [No customer response]: that there is No payment camera signal	Camera interface
+Self-Service Checkout Control	T1 [No customer response]: that there is No payment alarm signal	Alarm interface
+Alarm interface	T1.1: Activate Alarm	Alarm

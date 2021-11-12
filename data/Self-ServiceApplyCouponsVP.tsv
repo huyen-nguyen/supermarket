@@ -1,0 +1,7 @@
+From	Content	To
+Spanish Display Prompts	T1.9 [discounts]: Display prompt T1.3a.2[not valid]: Display prompt T1.5a.2[no discounts]: Display prompt	Self-Service Checkout Control
+Self-Service Checkout Control	T1.8 [discounts]: Retrieve display prompt T1.3a.1[not valid]: Retrieve display prompt T1.5a.1[no discounts]: Retrieve display prompt	Spanish Display Prompts
+Self-Service Checkout Control	T1.10 [discounts]: Display message indicating coupon applied to the order, T1.3a.3 [not valid]: Display message indicating that coupon not valid, T1.5a.3 [no discounts]: Display message indicating that no discounts are available	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	T1A.1 [coupon details entered manually]: Coupon details	Self-Service Checkout Control
+Self-Service Touch Screen Interface	T1.11 [discounts]: Message indicating coupon applied to the order, T1.3a.4 [not valid]: Message indicating that coupon not valid, T1.5a.4 [no discounts]: Message indicating that no discounts are available	Self-Service Touch Screen
+Self-Service Touch Screen	T1*A [coupon details entered manually]: Coupon details	Self-Service Touch Screen Interface

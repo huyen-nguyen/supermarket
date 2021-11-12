@@ -1,0 +1,5 @@
+From	Content	To
+Spanish Display Prompts	V1.1: Display prompt	Self-Service Checkout Control
+Self-Service Checkout Control	V1: Retrieve display prompt	Spanish Display Prompts
+Self-Service Checkout Control	V1.2: Display enter amount prompt	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	V1.3: Enter amount prompt	Self-Service Touch Screen

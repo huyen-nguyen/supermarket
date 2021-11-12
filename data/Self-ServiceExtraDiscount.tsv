@@ -1,0 +1,11 @@
+From	Content	To
+Self-Service Touch Screen	F2: TOTAL function key,	Self-Service Touch Screen Interface
+Self-Service Touch Screen Interface	F2.9: Total price	Self-Service Touch Screen
+Self-Service Touch Screen Interface	F2.1: TOTAL function key	Self-Service Checkout Control
+Self-Service Checkout Control	F2.8: Display total price (total price)	Self-Service Touch Screen Interface
+Self-Service Checkout Control	F2.2: Compute total price	<<algorithm>> Compute Total Cost
+<<algorithm>> Compute Total Cost	F2.7: Total price (total price, Extra discount amount)	Self-Service Checkout Control
+<<algorithm>> Compute Total Cost	F2.3: Get order details	Order Details
+Order Details	F2.4: Order details	<<algorithm>> Compute Total Cost
+<<algorithm>> Compute Total Cost	F2.5: Retrieve Extra discount rate	Extra Discount Rate
+Extra Discount Rate	F2.6: Extra discount rate	<<algorithm>> Compute Total Cost

@@ -1,0 +1,19 @@
+From	Content	To
+Self-Service Touch Screen Interface	F1.7: Prompt for customer to enter phone number and member PIN, F2.3A.4 [not member]: Not member message, F2.13 [is loyal]: Message indicating credit points added to account	Self-Service Touch Screen
+Self-Service Touch Screen	F1.2A* [id number entered manually]: Item identification number, F2A [not member]: Dismiss loyal customer option	Self-Service Touch Screen Interface
+Bar-Code Scanner	F1.2*: Item identification number	Bar-Code Scanner Interface
+Credit/Debit Card Reader	F2: Phone number and member PIN	Credit/Debit Card Reader Interface
+Credit/Debit Card Reader Interface	F2.1: Phone number and member PIN	Self-Service Checkout Control
+Bar-Code Scanner Interface	F1.3: Item identification number	Self-Service Checkout Control
+Self-Service Touch Screen Interface	F1.2A.1 [id number entered manually]: Item identification number, F2A.1 [not member]: Dismiss loyal customer option	Self-Service Checkout Control
+Self-Service Checkout Control	F1.6: Display prompt for customer to enter phone number and member PIN, F2.3A.3 [not member]: Display not member message,  F2.12 [is loyal]: Display message indicating credit points added to account	Self-Service Touch Screen Interface
+English Display Prompts	F1.5: Display prompt F2.3A.2: Display prompt F2.11 [is loyal]: Display prompt	Self-Service Checkout Control
+Self-Service Checkout Control	F1.4: Retrieve display prompt F2.3A.1: Retrieve display prompt F2.10 [is loyal]: Retrieve display prompt	English Display Prompts
+Self-Service Checkout Control	F2.2: Query loyal customers (phone number, member PIN), F2.8 [is loyal]: Add credit points to account (credit points)	Loyal Customers
+Loyal Customers	F2.3 [is loyal]: Confirmation, F2.3A [not loyal]: Not member message, F2.9 [is loyal]: Credit points added	Self-Service Checkout Control
+Order Details	F2.6 [is loyal]: Total price	<<algorithm>> Calculate Credit Points
+<<algorithm>> Calculate Credit Points	F2.5 [is loyal]: Retrieve total price	Order Details
+<<algorithm>> Calculate Credit Points	F2.7 [is loyal]: Credit points	Self-Service Checkout Control
+Self-Service Checkout Control	F2.4 [is loyal]: Calculate credit points	<<algorithm>> Calculate Credit Points
+Product Inventory	F2A.3 [not member]: Product information	Self-Service Checkout Control
+Self-Service Checkout Control	F2A.2 [not member]: Retrieve product information (Item identification number)	Product Inventory

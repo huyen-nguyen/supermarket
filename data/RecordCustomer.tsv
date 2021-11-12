@@ -1,0 +1,7 @@
+From	Content	To
+Camera	F4.6b.2: that recording stopped (customer recording)	Camera Interface
+Camera Interface	F1.2a.1: Record Customer, F4.6b.1: Stop recording	Camera
+Camera Interface	F4.6b.3: that recording stopped (customer recording)	Self-service Checkout Control
+Self-service Checkout Control	F1.2a: Activate Camera to record, F4.6b: Stop camera recording	Camera Interface
+Self-service Checkout Control	F4.6b.4: Send customer recording (customer recording)	Store computer interface
+Store computer interface	F4.6b.5: Customer recording	Store computer
