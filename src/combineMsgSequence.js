@@ -1,4 +1,4 @@
-let fileNameArray = ["FullServiceCheckoutBase.tsv", "SendInventory.tsv", "InventoryPredictionVP.tsv"];
+let fileNameArray = ["LoyalCustomer.tsv","ApplyCouponsDisplayLanguageVP.tsv","FullServiceCheckoutBase.tsv", "SendInventory.tsv", "InventoryPredictionVP.tsv"];
 
 loadData(fileNameArray[0]);
 
@@ -142,7 +142,8 @@ function processAlg(string){
 function desc(content){
 	let c = content.toLowerCase();
 	let primaryVerb = ["prompt to", "prompt for"]
-    let secondaryVerb = ["retrieve ", "open ", "print ", "display ", "compute ", "update ", "request ", "insert ", "calculate ", "scale ", "store ", "create "]
+    let secondaryVerb = ["retrieve ", "open ", "print ", "display ", "compute ", "update ", "request ", "insert ", "calculate ", "scale ", "store ", "create ",
+    "query ", "add ", "dismiss "]
 
     // if there exists a verb above
     if (secondaryVerb.some(d => c.includes(d))) {

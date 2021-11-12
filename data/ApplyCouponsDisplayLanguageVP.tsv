@@ -1,0 +1,7 @@
+From	To	Content
+Spanish Display Prompts	Full-Service Checkout Control	T1.9 [discounts]: Display prompt T1.3a.2[not valid]: Display prompt T1.5a.2[no discounts]: Display prompt
+Full-Service Checkout Control	Spanish Display Prompts	T1.8 [discounts]: Retrieve display prompt T1.3a.1[not valid]: Retrieve display prompt T1.5a.1[no discounts]: Retrieve display prompt
+Full-Service Checkout Control	Full-Service Touch Screen Interface	T1.10 [discounts]: Display message indicating coupon applied to the order, T1.3a.3 [not valid]: Display message indicating that coupon not valid T1.5a.3 [no discounts]: Display message indicating that no discounts are available
+Full-Service Checkout Control	Customer Display Interface	T1.10a [discounts]: Display message indicating coupon applied to the order, T1.3a.3a [not valid]: Display message indicating that coupon not valid T1.5a.3a [no discounts]: Display message indicating that no discounts are available
+Full-Service Touch Screen Interface	Full-Service Touch Screen	T1.11 [discounts]: Message indicating coupon applied to the order, T1.3a.4 [not valid]: Message indicating that coupon not valid, T1.5a.4 [no discounts]: Message indicating that no discounts are available
+Customer Display Interface	Customer Display	T1.10a.1 [discounts]: Message indicating coupon applied to the order, T1.3a.3a.1 [not valid]: Message indicating that coupon not valid, T1.5a.3a.1 [no discounts]: Message indicating that no discounts are available

@@ -1,0 +1,21 @@
+From	Content	To
+Full-Service Touch Screen	F1*A [id number entered manually]: Item identification number, F2A [not member]: Dismiss loyal customer option	Full-Service Touch Screen Interface
+Full-Service Touch Screen Interface	F2.3A.3a.1 [not member]: Not member message, F2.12a.1 [is loyal]: Message indicating credit points added to account	Full-Service Touch Screen
+Bar-Code Scanner	F1*: Item identification number	Bar-Code Scanner Interface
+Customer Display Interface	F1.5: Prompt customer to enter phone number and member PIN, F2.3A.4: Not member message, F2.13 [is loyal]: Message indicating credit points added to account	Customer Display
+Credit/Debit Card Reader	F2: Phone number and member PIN	Credit/Debit Card Reader Interface
+Full-Service Touch Screen Interface	F1A.1 [id number entered manually]: Item identification number, F2A.1 [not member]: Dismiss loyal customer option	Full-Service Checkout Control
+Full-Service Checkout Control	F2.3A.3a [not member]: Display not member message,  F2.12a [is loyal]: Display message indicating credit points added to account	Full-Service Touch Screen Interface
+Bar-Code Scanner Interface	F1.1: Item identification number	Full-Service Checkout Control
+Full-Service Checkout Control	F1.4: Display prompt customer to enter phone number and member PIN, F2.3A.3 [not member]: Display not member message, F2.12 [is loyal]: Display message indicating credit points added to account	Customer Display Interface
+Credit/Debit Card Reader Interface	F2.1: Phone number and member PIN	Full-Service Checkout Control
+English Display Prompts	F1.3: Display prompt F2.3A.2: Display prompt F2.11 [is loyal]: Display prompt	Full-Service Checkout Control
+Full-Service Checkout Control	F1.2: Retrieve display prompt F2.3A.1: Retrieve display prompt F2.10 [is loyal]: Retrieve display prompt	English Display Prompts
+Full-Service Checkout Control	F2.2: Query loyal customers (phone number, member PIN) F2.8 [is loyal]: Add credit points to account (credit points)	Loyal Customers
+Loyal Customers	F2.3 [is loyal]: Confirmation, F2.3A [not loyal]: Not member, F2.9 [is loyal]: Credit points added	Full-Service Checkout Control
+Full-Service Checkout Control	F2.4 [is loyal]: Calculate credit points	<<algorithm>> Calculate Credit Points
+<<algorithm>> Calculate Credit Points	F2.7 [is loyal]: Credit points	Full-Service Checkout Control
+<<algorithm>> Calculate Credit Points	F2.5 [is loyal]: Retrieve total price	Order Details
+Order Details	F2.6 [is loyal]: Total price	<<algorithm>> Calculate Credit Points
+Full-Service Checkout Control	F2A.2 [not member]: Retrieve product information (item identification number)	Product Inventory
+Product Inventory	F2A.3 [not member]: Product information	Full-Service Checkout Control
